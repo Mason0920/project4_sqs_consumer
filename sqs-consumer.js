@@ -1,6 +1,11 @@
 const { Consumer } = require('sqs-consumer');
 const AWS = require('aws-sdk');
-require('dotenv').config();
+const express = require('express');
+const healthCheckApp = express();
+
+healthCheckApp.get('/health', (req, res)=>{
+  res.status(200).send('this container is healthy')
+})
 
 AWS.config.update({
   region: "ap-norheast-2"
