@@ -3,11 +3,11 @@ const AWS = require('aws-sdk');
 require('dotenv').config();
 
 AWS.config.update({
-  region: process.env.AWS_REGION
+  region: "ap-norheast-2"
 });
 
 const app = Consumer.create({
-  queueUrl: process.env.AWS_QUEUEURL,
+  queueUrl: "https://sqs.ap-northeast-2.amazonaws.com/523139768306/EC2_SQS_ECS",
   handleMessage: async (message) => {
     console.log(message.Body)
   },
