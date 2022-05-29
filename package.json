@@ -1,0 +1,17 @@
+{
+  "name": "sqs-consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sqs-consumer.js",
+  "scripts": {
+    "dev": "nodemon sqs-consumer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1142.0",
+    "dotenv": "^16.0.1",
+    "sqs-consumer": "^5.7.0"
+  }
+}
