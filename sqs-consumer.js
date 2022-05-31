@@ -2,7 +2,7 @@ const { Consumer } = require('sqs-consumer');
 const AWS = require('aws-sdk');
 const express = require('express');
 const healthCheckApp = express();
-const port = 80
+const port = 3000
 
 healthCheckApp.listen(port, ()=>{
   console.log(`app is running on ${port}`);
@@ -10,6 +10,9 @@ healthCheckApp.listen(port, ()=>{
 healthCheckApp.get('/health', (req, res)=>{
   res.status(200).send('this container is healthy')
   console.log('hi')
+})
+healthCheckApp.get('/', (req, res)=>{
+  req.status(200).sned('hello-world')
 })
 
 AWS.config.update({
