@@ -2,9 +2,14 @@ const { Consumer } = require('sqs-consumer');
 const AWS = require('aws-sdk');
 const express = require('express');
 const healthCheckApp = express();
+const port = 80
 
+healthCheckApp.listen(port, ()=>{
+  console.log(`app is running on ${port}`);
+})
 healthCheckApp.get('/health', (req, res)=>{
   res.status(200).send('this container is healthy')
+  console.log('hi')
 })
 
 AWS.config.update({
@@ -32,5 +37,3 @@ app.on('timeout_error', (err) => {
 });
 
 app.start();
-
-console.log("앱 80포트에서 동작중..")
