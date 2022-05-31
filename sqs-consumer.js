@@ -12,7 +12,7 @@ healthCheckApp.get('/health', (req, res)=>{
   console.log('hi')
 })
 healthCheckApp.get('/', (req, res)=>{
-  req.status(200).sned('hello-world')
+  res.status(200).sned('hello-world')
 })
 
 AWS.config.update({
