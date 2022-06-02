@@ -9,7 +9,7 @@ healthCheckApp.listen(port, ()=>{
 })
 healthCheckApp.get('/health', (req, res)=>{
   res.status(200).send('this container is healthy')
-  console.log('hi')
+  console.log('hi heesung')
 })
 healthCheckApp.get('/', (req, res)=>{
   res.status(200).sned('hello-world')
